@@ -1,0 +1,20 @@
+﻿@page
+@model ASP.NET_Core_Identity.Pages.LogautModel
+@{
+}
+
+
+<form method="post">
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-sm-12 col-md-12 col-lg-4">
+                <p>Are you Sure you want to logut?</p>
+
+                <p>
+                    <button type="submit" class="btn btn-primary">Logout</button>
+                    <button class="btn btn-light ml-5 border-dark" asp-page-handler="DontLogout">No</button>
+                </p>
+               
+        </div>
+    </div>
+</form>
