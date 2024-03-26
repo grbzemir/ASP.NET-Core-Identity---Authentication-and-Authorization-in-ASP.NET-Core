@@ -11,6 +11,11 @@ builder.Services.AddDbContext<AuthDbContext>(options =>
 options.UseSqlServer(builder.Configuration.GetConnectionString("AuthConnectionString")));
 builder.Services.AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkStores<AuthDbContext>();
 
+builder.Services.ConfigureApplicationCookie(config =>
+{
+    config.Cookie.Name = "Identity.Cookie";
+    config.LoginPath = "/Login";
+});
 
 var app = builder.Build();
 
